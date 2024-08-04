@@ -12,5 +12,5 @@
 		"target": "ESNext"
 	},
 	"exclude": ["node_modules"],
-	"include": ["index.mts"]
+	"include": ["index.ts"]
 }

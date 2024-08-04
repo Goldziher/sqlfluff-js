@@ -9,10 +9,7 @@
 		"enabled": true,
 		"ignore": ["dist", "node_modules"],
 		"rules": {
-			"recommended": true,
-			"nursery": {
-				"noUndeclaredDependencies": "error"
-			}
+			"recommended": true
 		}
 	},
 	"json": {

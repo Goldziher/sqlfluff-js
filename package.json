@@ -1,9 +1,11 @@
 {
 	"name": "sqlfluff",
 	"version": "1.0.0",
-	"main": "dist/index.mjs",
-	"type": "module",
-	"files": ["dist/index.mjs"],
+	"main": "dist/index.js",
+	"files": ["dist/index.js"],
+	"bin": {
+		"sqlfluffjs": "dist/index.js"
+	},
 	"description": "An awesome SQL linter",
 	"keywords": [],
 	"readme": "README.md",
@@ -20,10 +22,10 @@
 	"scripts": {
 		"format": "biome format --write .",
 		"lint": "biome lint --fix .",
+		"cli": "biome lint --fix . && biome format --write .",
 		"build": "rimraf dist && tsc",
-		"preinstall": "npx only-allow pnpm",
 		"prepare": "husky",
-		"prepublish": "pnpm run build"
+		"prepublish": "npm run build"
 	},
 	"lint-staged": {
 		"*.json": "biome format --write",
@@ -39,8 +41,8 @@
 		"typescript": "^5.5.4"
 	},
 	"lint-staged": {
-		"*.json": "biome format --write",
-		"*.ts": ["biome format --write", "eslint --fix --no-warn-ignored"]
+		"*.{json,ts}": "biome format --write",
+		"*.ts": "biome format --write"
 	},
 	"engines": {
 		"node": ">=20.0.0"
