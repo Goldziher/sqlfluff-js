@@ -21,8 +21,9 @@
 		"format": "biome format --write .",
 		"lint": "biome lint --fix .",
 		"build": "rimraf dist && tsc",
-		"prepublish": "pnpm run build",
-		"preinstall": "npx only-allow pnpm"
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "husky",
+		"prepublish": "pnpm run build"
 	},
 	"lint-staged": {
 		"*.json": "biome format --write",
