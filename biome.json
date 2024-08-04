@@ -1,0 +1,23 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 120,
+		"ignore": ["dist", "node_modules"]
+	},
+	"linter": {
+		"enabled": true,
+		"ignore": ["dist", "node_modules"],
+		"rules": {
+			"recommended": true,
+			"nursery": {
+				"noUndeclaredDependencies": "error"
+			}
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": true
+		}
+	}
+}

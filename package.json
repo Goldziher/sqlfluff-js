@@ -1,0 +1,47 @@
+{
+	"name": "sqlfluff",
+	"version": "1.0.0",
+	"main": "dist/index.mjs",
+	"type": "module",
+	"files": ["dist/index.mjs"],
+	"description": "An awesome SQL linter",
+	"keywords": [],
+	"readme": "README.md",
+	"author": "",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://<repo>.git"
+	},
+	"bugs": {
+		"url": "https://<repo>/issues"
+	},
+	"homepage": "https://<repo>",
+	"scripts": {
+		"format": "biome format --write .",
+		"lint": "biome lint --fix .",
+		"build": "rimraf dist && tsc",
+		"prepublish": "pnpm run build",
+		"preinstall": "npx only-allow pnpm"
+	},
+	"lint-staged": {
+		"*.json": "biome format --write",
+		"*.ts": "biome format --write"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@types/node": "^22.1.0",
+		"husky": "^9.1.4",
+		"lint-staged": "^15.2.8",
+		"rimraf": "^6.0.1",
+		"typescript": "^5.5.4"
+	},
+	"lint-staged": {
+		"*.json": "biome format --write",
+		"*.ts": ["biome format --write", "eslint --fix --no-warn-ignored"]
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}
