@@ -27,10 +27,6 @@
 		"prepare": "husky",
 		"prepublish": "npm run build"
 	},
-	"lint-staged": {
-		"*.json": "biome format --write",
-		"*.ts": "biome format --write"
-	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.8.3",
 		"@commitlint/config-conventional": "^19.2.2",
